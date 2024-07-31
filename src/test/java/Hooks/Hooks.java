@@ -1,28 +1,25 @@
 package Hooks;
 
-import org.testng.annotations.AfterMethod;
-
-import Hooks.DriverFactory;
-
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 
-import utilities.configReader;
+
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
+import utilities.configReader;
 
 
-public class Hooks {
+public class Hooks extends DriverFactory{
 
 	private static DriverFactory driverFactory;
-	private static WebDriver driver;
+
 	private static configReader configReader;
 	static Properties prop;
 	
@@ -34,19 +31,18 @@ public class Hooks {
 		configReader = new configReader();
 		prop = configReader.init_prop();
 	}
-	@BeforeAll(order=1)
-	public  static void launchBrowser()
-	{
-		String browserName = prop.getProperty("browser");
+	@Before
+	public static void before() throws Throwable {
+		String browser = configReader.getBrowserType();
+		System.out.println(browser);
+		//Initialize driver from driver factory
 		driverFactory = new DriverFactory();
-		driver = driverFactory.init_driver(browserName);
+		driverFactory.init_driver(browser);
+
 	}
+
 	
-//	@AfterAll(order=1)
-//	public  static void quitBrowser() {
-//		driver.quit();
-//	}
-	
+		
 	@AfterMethod
 	@After(order = 1)
 	public void tearDown(Scenario scenario) {

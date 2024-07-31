@@ -1,5 +1,7 @@
 Feature: Login Page validations
 
+
+
   Scenario: Verify user is able to launch the website successfully
     When User gives correct website link
     Then user is navigated to the home page of website
@@ -12,15 +14,17 @@ Feature: Login Page validations
     When User gives correct website link
     Then HTTP response >= 400. Then the link is broken
 
-  Scenario:Verify the text spelling in the page
+  Scenario: Verify the text spelling in the page
     When User gives correct website link
     Then user should see correct spellings in all fields
-
-  Scenario:Verify the company logo
+    
+@VerifyDescriptive
+  Scenario: Verify the company logo
     When User gives correct website link
     Then user should see logo on the right side
+    
 
-  Scenario:Verify input descriptive test in username field
+  Scenario: Verify input descriptive test in username field
     When User gives correct website link
     Then user should see username in gray color
 
@@ -35,6 +39,7 @@ Feature: Login Page validations
     #|#@$cbjsl|password|
     #|47389290|password|
 #
+@VerifyDescriptive
     Scenario Outline: user loggedin
           Given user enters credentials from "<SheetName>" and <RowNumber> 
       When user clicks login

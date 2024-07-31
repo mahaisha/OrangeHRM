@@ -17,7 +17,7 @@ import pages.LoginPage;
 import utilities.ExcelReader;
 import utilities.configReader;
 
-public class LoginPageSteps{
+public class LoginPageSteps extends DriverFactory{
 
     String url;
     String invalidUrl;
@@ -27,18 +27,20 @@ public class LoginPageSteps{
 	 public String sheetName;
 
       
-    private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
+    private LoginPage loginPage = new LoginPage();
     public static ResourceBundle config =ResourceBundle.getBundle("config");
     
     
     @Given("User launches the browser")
     public void user_launches_the_browser() {
-
+    	 url = config.getString("validURL");
+    	
+       
     }
     @When("User gives correct website link")
     public void user_gives_correct_website_link() {
-        url = config.getString("validURL");
-         DriverFactory.getDriver().get(url);
+     
+        
     }
     @Then("user is navigated to the home page of website")
     public void user_is_navigated_to_the_home_page_of_website() {

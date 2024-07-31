@@ -9,38 +9,41 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverFactory {
 
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	public final static int TIMEOUT = 50;
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 	
 
-	public WebDriver init_driver(String browser)
+	public void init_driver(String browser)
 	{
 		System.out.println("browser value is:" + browser);
 
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			driver = new ChromeDriver();
-			tlDriver.set(driver);
+			
 		}
 		else if(browser.equalsIgnoreCase("firefox"))
-		{			
+		{	
+			System.out.println("browser value is:" + browser);
 			driver = new FirefoxDriver();
-			tlDriver.set(driver);
+			
 		}
 		else if(browser.equalsIgnoreCase("edge"))
 		{
+			System.out.println("browser value is:" + browser);
 			driver = new EdgeDriver();
-			tlDriver.set(driver);  
+			 
 		}
 		else {
 			System.out.println("Please pass the correct browser value " + browser);
 		}
 
-		getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().maximize();
-		return getDriver();
+	       driver.manage().deleteAllCookies();
+		   driver.manage().window().maximize();
+		   driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
 	}
 	
 	public synchronized static WebDriver getDriver() {

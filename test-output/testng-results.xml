@@ -1,110 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-25T14:14:25 CDT" name="Default suite" finished-at="2024-07-25T14:14:25 CDT" duration-ms="858">
+  <suite started-at="2024-07-31T11:55:53 MDT" name="Suite" finished-at="2024-07-31T11:56:41 MDT" duration-ms="48645">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@17aad511]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@3e30646a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@5b619d14]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-07-25T14:14:25 CDT" name="Default test" finished-at="2024-07-25T14:14:25 CDT" duration-ms="858">
+    <test started-at="2024-07-31T11:55:53 MDT" name="FirefoxTest" finished-at="2024-07-31T11:56:24 MDT" duration-ms="31797">
       <class name="testrunners.MyTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunners.MyTestRunner@17aad511]" started-at="2024-07-25T14:14:25 CDT" name="setUpClass" finished-at="2024-07-25T14:14:25 CDT" duration-ms="691" status="FAIL">
+        <test-method is-config="true" signature="defineBrowser(java.lang.String)[pri:0, instance:testrunners.MyTestRunner@3e30646a]" started-at="2024-07-31T11:55:53 MDT" name="defineBrowser" finished-at="2024-07-31T11:55:53 MDT" duration-ms="19" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5c9ac4cc]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.java.InvalidMethodSignatureException">
-            <message>
-              <![CDATA[A method annotated with BeforeAll or AfterAll must have one of these signatures:
- * public static void before_or_after_all()
-at Hooks.Hooks.launchBrowser(java.lang.String)
-
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.java.InvalidMethodSignatureException: A method annotated with BeforeAll or AfterAll must have one of these signatures:
- * public static void before_or_after_all()
-at Hooks.Hooks.launchBrowser(java.lang.String)
-
-
-at io.cucumber.java.InvalidMethodSignatureException$InvalidMethodSignatureExceptionBuilder.build(InvalidMethodSignatureException.java:52)
-at io.cucumber.java.JavaStaticHookDefinition.createInvalidSignatureException(JavaStaticHookDefinition.java:44)
-at io.cucumber.java.JavaStaticHookDefinition.requireValidMethod(JavaStaticHookDefinition.java:24)
-at io.cucumber.java.JavaStaticHookDefinition.<init>(JavaStaticHookDefinition.java:17)
-at io.cucumber.java.GlueAdaptor.addDefinition(GlueAdaptor.java:30)
-at io.cucumber.java.JavaBackend.lambda$loadGlue$1(JavaBackend.java:42)
-at io.cucumber.java.MethodScanner.scan(MethodScanner.java:67)
-at io.cucumber.java.MethodScanner.scan(MethodScanner.java:58)
-at io.cucumber.java.MethodScanner.scan(MethodScanner.java:33)
-at io.cucumber.java.JavaBackend.lambda$loadGlue$2(JavaBackend.java:40)
-at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-at io.cucumber.java.JavaBackend.loadGlue(JavaBackend.java:40)
-at io.cucumber.core.runner.Runner.<init>(Runner.java:56)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:47)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:40)
-at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:35)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:155)
-at io.cucumber.core.runtime.CucumberExecutionContext.runBeforeAllHooks(CucumberExecutionContext.java:106)
-at io.cucumber.testng.TestNGCucumberRunner.<init>(TestNGCucumberRunner.java:124)
-at io.cucumber.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:27)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.java.InvalidMethodSignatureException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- defineBrowser -->
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunners.MyTestRunner@3e30646a]" started-at="2024-07-31T11:55:53 MDT" name="setUpClass" finished-at="2024-07-31T11:55:54 MDT" duration-ms="1116" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7c1e2a2d]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunners.MyTestRunner@17aad511]" started-at="2024-07-25T14:14:25 CDT" name="tearDownClass" finished-at="2024-07-25T14:14:25 CDT" duration-ms="0" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@3e30646a]" started-at="2024-07-31T11:55:54 MDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-31T11:56:04 MDT" duration-ms="10584" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the company logo"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Page validations]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@3e30646a]" started-at="2024-07-31T11:56:04 MDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-31T11:56:20 MDT" duration-ms="15942" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["user loggedin"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Page validations]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunners.MyTestRunner@3e30646a]" started-at="2024-07-31T11:56:20 MDT" name="tearDownClass" finished-at="2024-07-31T11:56:24 MDT" duration-ms="4079" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- testrunners.MyTestRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- FirefoxTest -->
+    <test started-at="2024-07-31T11:56:25 MDT" name="ChromeTest" finished-at="2024-07-31T11:56:41 MDT" duration-ms="16816">
+      <class name="testrunners.MyTestRunner">
+        <test-method is-config="true" signature="defineBrowser(java.lang.String)[pri:0, instance:testrunners.MyTestRunner@5b619d14]" started-at="2024-07-31T11:56:25 MDT" name="defineBrowser" finished-at="2024-07-31T11:56:25 MDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- defineBrowser -->
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunners.MyTestRunner@5b619d14]" started-at="2024-07-31T11:56:25 MDT" name="setUpClass" finished-at="2024-07-31T11:56:25 MDT" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@333dd51e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@5b619d14]" started-at="2024-07-31T11:56:25 MDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-31T11:56:33 MDT" duration-ms="8429" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the company logo"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Page validations]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunners.MyTestRunner@5b619d14]" started-at="2024-07-31T11:56:33 MDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-31T11:56:39 MDT" duration-ms="5738" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["user loggedin"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Page validations]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"*[name='username']"}
+  (Session info: chrome=127.0.6533.74)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [391124d61d9a9e711c4bdf5882a984d2, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.74, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\nsuma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57782}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57782/devtoo..., se:cdpVersion: 127.0.6533.74, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 391124d61d9a9e711c4bdf5882a984d2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='username']"}
+  (Session info: chrome=127.0.6533.74)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [391124d61d9a9e711c4bdf5882a984d2, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.74, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\nsuma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57782}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57782/devtoo..., se:cdpVersion: 127.0.6533.74, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 391124d61d9a9e711c4bdf5882a984d2
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+at pages.LoginPage.enterUserName(LoginPage.java:110)
+at StepDefinitions.LoginPageSteps.user_enters_credentials_from_and(LoginPageSteps.java:95)
+at ✽.user enters credentials from "login" and 0(file:///C:/Users/nsuma/OneDrive/Desktop/Team%204/orangeHRM/src/test/resources/Features/A.loginPage.feature:44)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunners.MyTestRunner@5b619d14]" started-at="2024-07-31T11:56:39 MDT" name="tearDownClass" finished-at="2024-07-31T11:56:41 MDT" duration-ms="2598" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testrunners.MyTestRunner -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Suite -->
 </testng-results>

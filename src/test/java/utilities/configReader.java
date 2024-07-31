@@ -8,6 +8,7 @@ import java.util.Properties;
 public class configReader {
 
 	private Properties prop;
+	private static String browserType = null;
 	
 	public Properties init_prop() {
 		
@@ -27,6 +28,26 @@ public class configReader {
 		}
 		
 		return prop;
+	}
+	
+	
+
+	public static void setBrowserType(String browser) {
+
+		browserType = browser;
+
+	}
+
+	public  String getBrowserType() throws Throwable {
+
+		if (browserType != null)
+
+			return browserType;
+
+		else
+
+			throw new RuntimeException("browser not specified in the testng.xml");
+
 	}
 	
 }

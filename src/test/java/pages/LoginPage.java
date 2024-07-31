@@ -17,12 +17,14 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.PageFactory;
 
+import Hooks.DriverFactory;
 import utilities.configReader;
 
 
-public class LoginPage {
-    private WebDriver driver;
+public class LoginPage extends DriverFactory {
+   
     String invalidUrl;
     String validUrl;
     
@@ -31,10 +33,7 @@ public class LoginPage {
     configReader cp;
     Properties prop;
 
-    //constructor
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    
 
     //locators or Object Repository
     private By userName = By.name("username");
@@ -45,6 +44,14 @@ public class LoginPage {
     private By pageNotFoundError = By.xpath("//span[@jsselect='heading']");
     private By reloadButtonPageError = By.id("reload-button");
     
+  //constructor
+    public LoginPage( ) {
+    	PageFactory.initElements(driver, this);
+    }
+    
+    public static void getURL(String URL) {
+    	driver.get(URL);
+    }
     
     public int checkInvalURL() throws IOException {
          invalidUrl = config.getString("invalidURL");
